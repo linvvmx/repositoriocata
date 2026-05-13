@@ -1,0 +1,125 @@
+──(kali㉿kali)-[~/Desktop]
+└─$ ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=255 time=7.80 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=255 time=7.91 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=255 time=7.93 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=255 time=7.68 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=255 time=7.79 ms
+^C
+--- 8.8.8.8 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4002ms
+rtt min/avg/max/mdev = 7.683/7.821/7.929/0.090 ms
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ wget https://github.com/OJ/gobuster/releases/download/v3.8.2/gobuster_Linux_x86_64.tar.gz
+--2026-05-13 07:54:55--  https://github.com/OJ/gobuster/releases/download/v3.8.2/gobuster_Linux_x86_64.tar.gz
+Resolving github.com (github.com)... 4.228.31.150
+Connecting to github.com (github.com)|4.228.31.150|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://release-assets.githubusercontent.com/github-production-release-asset/26639347/ab1fa398-ddb2-4e5e-b2ff-513ee04d4e04?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-13T20%3A50%3A11Z&rscd=attachment%3B+filename%3Dgobuster_Linux_x86_64.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-13T19%3A49%3A15Z&ske=2026-05-13T20%3A50%3A11Z&sks=b&skv=2018-11-09&sig=MScQPpUub%2BVlIdIiebTuCvruliLHENjg44l3Wip%2FJIU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3ODcwMjM1NCwibmJmIjoxNzc4NzAyMDU0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.ErMQK2GuH4ZM5IUEHMFAqeNrXG9RsfwhS40vB2Gkous&response-content-disposition=attachment%3B%20filename%3Dgobuster_Linux_x86_64.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2026-05-13 07:54:56--  https://release-assets.githubusercontent.com/github-production-release-asset/26639347/ab1fa398-ddb2-4e5e-b2ff-513ee04d4e04?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-05-13T20%3A50%3A11Z&rscd=attachment%3B+filename%3Dgobuster_Linux_x86_64.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-05-13T19%3A49%3A15Z&ske=2026-05-13T20%3A50%3A11Z&sks=b&skv=2018-11-09&sig=MScQPpUub%2BVlIdIiebTuCvruliLHENjg44l3Wip%2FJIU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3ODcwMjM1NCwibmJmIjoxNzc4NzAyMDU0LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.ErMQK2GuH4ZM5IUEHMFAqeNrXG9RsfwhS40vB2Gkous&response-content-disposition=attachment%3B%20filename%3Dgobuster_Linux_x86_64.tar.gz&response-content-type=application%2Foctet-stream
+Resolving release-assets.githubusercontent.com (release-assets.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.109.133, ...
+Connecting to release-assets.githubusercontent.com (release-assets.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3824547 (3.6M) [application/octet-stream]
+Saving to: ‘gobuster_Linux_x86_64.tar.gz’
+
+gobuster_Linux_x86_ 100%[================>]   3.65M  --.-KB/s    in 0.1s    
+
+2026-05-13 07:54:56 (37.1 MB/s) - ‘gobuster_Linux_x86_64.tar.gz’ saved [3824547/3824547]
+
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ tar -xzvf gobuster_Linux_x86_64.tar.gz
+LICENSE
+README.md
+gobuster
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ sudo mv gobuster /usr/local/bin/
+[sudo] password for kali: 
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ rm gobuster_Linux_x86_64.tar.gz LICENSE README.md
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ gobuster --version
+gobuster version 3.8.2
+Build info:
+go      go1.25.1
+path    github.com/OJ/gobuster/v3
+mod     github.com/OJ/gobuster/v3       v3.8.2
+dep     github.com/cpuguy83/go-md2man/v2        v2.0.7  h1:zbFlGlXEAKlwXpmvle3d8Oe3YnkKIK4xSRTd3sHPnBo=
+dep     github.com/fatih/color  v1.18.0 h1:S8gINlzdQ840/4pfAwic/ZE0djQEH3wM94VfqLTZcOM=
+dep     github.com/google/uuid  v1.6.0  h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
+dep     github.com/mattn/go-colorable   v0.1.14 h1:9A9LHSqF/7dyVVX6g0U9cwm9pG3kP9gSzcuIPHPsaIE=
+dep     github.com/mattn/go-isatty      v0.0.20 h1:xfD0iDuEKnDkl03q4limB+vH+GxLEtL/jb4xVJSWWEY=
+dep     github.com/pin/tftp/v3  v3.1.0  h1:rQaxd4pGwcAJnpId8zC+O2NX3B2/NscjDZQaqEjuE7c=
+dep     github.com/russross/blackfriday/v2      v2.1.0  h1:JIOH55/0cWyOuilr9/qlrm0BSXldqnqwMsf35Ld67mk=
+dep     github.com/urfave/cli/v2        v2.27.7 h1:bH59vdhbjLv3LAvIu6gd0usJHgoTTPhCFib8qqOwXYU=
+dep     github.com/xrash/smetrics       v0.0.0-20250705151800-55b8f293f342  h1:FnBeRrxr7OU4VvAzt5X7s6266i6cSVkkFPS0TuXWbIg=
+dep     go.uber.org/automaxprocs        v1.6.0  h1:O3y2/QNTOdbF+e/dpXNNW7Rx2hZ4sTIPyybbxyNqTUs=
+dep     golang.org/x/crypto     v0.41.0 h1:WKYxWedPGCTVVl5+WHSSrOBT0O8lx32+zxmHxijgXp4=
+dep     golang.org/x/net        v0.43.0 h1:lat02VYK2j4aLzMzecihNvTlJNQUq316m2Mr9rnM6YE=
+dep     golang.org/x/sys        v0.35.0 h1:vz1N37gP5bs89s7He8XuIYXpyY0+QlsKmzipCbUtyxI=
+dep     golang.org/x/term       v0.34.0 h1:O/2T7POpk0ZZ7MAzMeWFSg6S5IpWd/RXDlM9hgM3DR4=
+dep     software.sslmate.com/src/go-pkcs12      v0.6.0  h1:f3sQittAeF+pao32Vb+mkli+ZyT+VwKaD014qFGq6oU=
+build   -buildmode=exe
+build   -compiler=gc
+build   -ldflags="-s -w -X main.version=3.8.2 -X main.commit=e8410cad6cacf08b82e2f610055f636f0be61c40 -X main.date=2025-09-04T08:21:06Z -X main.builtBy=goreleaser"
+build   CGO_ENABLED=0
+build   GOARCH=amd64
+build   GOOS=linux
+build   GOAMD64=v1
+build   vcs=git
+build   vcs.revision=e8410cad6cacf08b82e2f610055f636f0be61c40
+build   vcs.time=2025-09-04T08:20:21Z
+build   vcs.modified=false
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ ls
+                                                                             
+┌──(kali㉿kali)-[~/Desktop]
+└─$ cd 
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ping 10.0.2.2
+PING 10.0.2.2 (10.0.2.2) 56(84) bytes of data.
+64 bytes from 10.0.2.2: icmp_seq=1 ttl=255 time=0.352 ms
+64 bytes from 10.0.2.2: icmp_seq=2 ttl=255 time=0.489 ms
+64 bytes from 10.0.2.2: icmp_seq=3 ttl=255 time=0.466 ms
+64 bytes from 10.0.2.2: icmp_seq=4 ttl=255 time=0.461 ms
+64 bytes from 10.0.2.2: icmp_seq=5 ttl=255 time=0.443 ms
+64 bytes from 10.0.2.2: icmp_seq=6 ttl=255 time=0.425 ms
+64 bytes from 10.0.2.2: icmp_seq=7 ttl=255 time=0.345 ms
+64 bytes from 10.0.2.2: icmp_seq=8 ttl=255 time=0.320 ms
+^C
+--- 10.0.2.2 ping statistics ---
+8 packets transmitted, 8 received, 0% packet loss, time 7167ms
+rtt min/avg/max/mdev = 0.320/0.412/0.489/0.060 ms
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ping 192.168.56.1
+PING 192.168.56.1 (192.168.56.1) 56(84) bytes of data.
+64 bytes from 192.168.56.1: icmp_seq=33 ttl=128 time=0.435 ms
+64 bytes from 192.168.56.1: icmp_seq=34 ttl=128 time=0.399 ms
+64 bytes from 192.168.56.1: icmp_seq=35 ttl=128 time=0.495 ms
+64 bytes from 192.168.56.1: icmp_seq=36 ttl=128 time=0.501 ms
+64 bytes from 192.168.56.1: icmp_seq=37 ttl=128 time=0.384 ms
+^C
+--- 192.168.56.1 ping statistics ---
+37 packets transmitted, 5 received, 86.4865% packet loss, time 36860ms
+rtt min/avg/max/mdev = 0.384/0.442/0.501/0.048 ms
+                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
+------------------------------------------
+$ gobuster dir -u http://192.168.56.1:8081 -w /usr/share/wordlists/dirb/common.txt
+------------------------------------------
+buscar:
+(-u -w)
