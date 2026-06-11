@@ -1,0 +1,88 @@
+Sigue este orden en Thunder Client:
+
+1. Registrar recepcionista
+
+POST http://localhost:3000/recepcionistas
+Body: { "email": "ale@troncoso.com", "password": "12345" }
+
+✅ 200 — "Recepcionista creado con éxito"
+
+2. Registrar email duplicado
+
+POST http://localhost:3000/recepcionistas
+Body: { "email": "ale@troncoso.com", "password": "12345" }
+
+✅ 409 — "El email ya está registrado"
+
+3. Login correcto
+
+POST http://localhost:3000/login
+Body: { "email": "ale@troncoso.com", "password": "12345" }
+
+✅ 200 — devuelve token, cópialo
+
+4. Login con contraseña incorrecta
+
+POST http://localhost:3000/login
+Body: { "email": "ale@troncoso.com", "password": "wrongpass" }
+
+✅ 401 — "Email o contraseña incorrecta"
+
+5. Listar recepcionistas
+
+GET http://localhost:3000/recepcionistas
+
+✅ 200 — array con recepcionistas
+
+6. Crear reserva
+
+POST http://localhost:3000/reservas
+Header: Authorization: Bearer <token>
+Body: { "nombre_cliente": "Juan", "habitaciones": 201, "noches": 3 }
+
+✅ 200 — confirmación
+
+7. Listar reservas
+
+GET http://localhost:3000/reservas
+Header: Authorization: Bearer <token>
+
+✅ 200 — array con reservas
+
+8. Modificar reserva
+
+PATCH http://localhost:3000/reservas/1
+Header: Authorization: Bearer <token>
+Body: { "noches": 7 }
+
+✅ 200 — confirmación con email
+
+9. Modificar reserva inexistente
+
+PATCH http://localhost:3000/reservas/999
+Header: Authorization: Bearer <token>
+Body: { "noches": 7 }
+
+✅ 404 — "No se encontró ninguna reserva"
+
+10. Eliminar reserva
+
+DELETE http://localhost:3000/reservas/1
+Header: Authorization: Bearer <token>
+
+✅ 200 — confirmación con email
+
+11. Eliminar reserva inexistente
+
+DELETE http://localhost:3000/reservas/999
+Header: Authorization: Bearer <token>
+
+✅ 404 — "No se encontró ninguna reserva"
+
+12. Cualquier ruta protegida sin token
+
+PATCH o DELETE sin header Authorization
+
+✅ 401 — "Token requerido"
+
+Si los 12 casos responden como se indica, el backend está completo y correcto.
